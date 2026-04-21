@@ -472,7 +472,12 @@ class VintedBot:
             "telegram_token": telegram_token,
             "chat_id": chat_id,
             "country": country,
-            "searches": [],
+            "searches": [
+    {"query": "kaszmir", "max_price": 50},
+    {"query": "cashmere", "max_price": 50},
+    {"query": "wełna merino", "max_price": 50},
+    {"query": "len", "max_price": 50}
+                        ],
             "check_interval": 60,
             "max_price": None,
             "min_price": None
