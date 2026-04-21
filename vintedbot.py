@@ -461,13 +461,13 @@ class VintedBot:
             logger.error(f"Configuration error: {e}")
             sys.exit(1)
     
-     def create_initial_config(self):
+    def create_initial_config(self):
         logger.info("Config file not found, creating initial setup")
-        
+
         telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
         chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
         country = os.environ.get("VINTED_COUNTRY", "pl")
-        
+
         config = {
             "telegram_token": telegram_token,
             "chat_id": chat_id,
@@ -477,7 +477,7 @@ class VintedBot:
             "max_price": None,
             "min_price": None
         }
-        
+
         self.save_config(config)
         logger.info("Config created from environment variables")
         return config
