@@ -549,7 +549,7 @@ class VintedBot:
         if not self.searches:
             print("\n❌ No searches configured! Please add at least one search before starting monitoring.")
             print("💡 Go back to the menu and select '1. Add new search' first.")
-            input("\nPress Enter to return to menu...")
+            pass
             return
         
         logger.info(f"Monitoring {len(self.searches)} searches every {self.check_interval} seconds")
