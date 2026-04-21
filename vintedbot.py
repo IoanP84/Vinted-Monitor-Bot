@@ -461,38 +461,25 @@ class VintedBot:
             logger.error(f"Configuration error: {e}")
             sys.exit(1)
     
-    def create_initial_config(self) -> Dict:
-        print("\n🎉 Welcome to Vinted Monitor Bot Setup!")
-        print("=" * 40)
+     def create_initial_config(self):
+        logger.info("Config file not found, creating initial setup")
         
         telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-        if not telegram_token:
-            logger.error("Telegram token cannot be empty!")
-            sys.exit(1)
-        
-        print("\n🌍 Select country:")
-        print("🇭🇺 1. Hungary (.hu)")
-        print("🇩🇪 2. Germany (.de)")
-        print("🇫🇷 3. France (.fr)")
-        print("🇬🇧 4. UK/International (.com)")
-        print("🇪🇸 5. Spain (.es)")
-        
-        country_choice = input("Choose (1-5): ").strip()
-        country_codes = {'1': '.hu', '2': '.de', '3': '.fr', '4': '.com', '5': '.es'}
-        country_code = country_codes.get(country_choice, '.hu')
+        chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
+        country = os.environ.get("VINTED_COUNTRY", "pl")
         
         config = {
             "telegram_token": telegram_token,
-            "country_code": country_code,
-            "searches": []
+            "chat_id": chat_id,
+            "country": country,
+            "searches": [],
+            "check_interval": 60,
+            "max_price": None,
+            "min_price": None
         }
         
-        with open(self.config_path, 'w', encoding='utf-8') as f:
-            json.dump(config, f, indent=2, ensure_ascii=False)
-        
-        print(f"\n✅ Configuration saved to {self.config_path}")
-        print("📝 You can now add searches using the menu!")
-        
+        self.save_config(config)
+        logger.info("Config created from environment variables")
         return config
     
     def load_searches(self):
