@@ -757,7 +757,7 @@ async def main():
     try:
         print("\n🤖 Vinted Monitor Bot")
         print("=" * 40)
-        await bot.start_monitoring()
+        await bot.start()
     except KeyboardInterrupt:
         logger.info("Received keyboard interrupt")
     except Exception as e:
