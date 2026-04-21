@@ -465,7 +465,7 @@ class VintedBot:
         print("\n🎉 Welcome to Vinted Monitor Bot Setup!")
         print("=" * 40)
         
-        telegram_token = input("🤖 Enter your Telegram Bot Token: ").strip()
+        telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
         if not telegram_token:
             logger.error("Telegram token cannot be empty!")
             sys.exit(1)
@@ -633,7 +633,7 @@ class VintedBot:
             print("Query cannot be empty!")
             return None
         
-        chat_id = input("💬 Telegram Chat ID: ").strip()
+        chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
         if not chat_id:
             print("Chat ID cannot be empty!")
             return None
