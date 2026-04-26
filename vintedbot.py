@@ -441,7 +441,7 @@ class VintedBot:
     
     def load_config(self) -> Dict:
         try:
-            if not os.path.exists(self.config_path):
+            if True:
                 logger.info("Config file not found, creating initial setup")
                 return self.create_initial_config()
             
