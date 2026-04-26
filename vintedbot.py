@@ -493,7 +493,7 @@ class VintedBot:
         if 'searches' in self.config and self.config['searches']:
             for search_data in self.config['searches']:
                 search_config = SearchConfig(
-                    chat_id=search_data.get('chat_id', int(os.environ.get("TELEGRAM_CHAT_ID", "0")))
+                    chat_id=search_data.get('chat_id', int(os.environ.get("TELEGRAM_CHAT_ID", "0"))),
                     name=f"Search: {search_data.get('query', 'Unknown')}",
                     filters=SearchFilters(
                         query=search_data.get('query', ''),
