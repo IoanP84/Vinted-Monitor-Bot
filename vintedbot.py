@@ -465,7 +465,7 @@ class VintedBot:
         logger.info("Config file not found, creating initial setup")
 
         telegram_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-        chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
+        chat_id = int(os.environ.get("TELEGRAM_CHAT_ID", "0"))
         country = os.environ.get("VINTED_COUNTRY", "pl")
 
         config = {
