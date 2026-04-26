@@ -475,7 +475,7 @@ class VintedBot:
         config = {
             "telegram_token": telegram_token,
             "chat_id": chat_id,
-            "country": country,
+            "country_code": ".pl",
            "searches": [
     {"query": "kaszmir", "max_price": 50, "chat_id": 8733608216, "category": "Kids"},
     {"query": "cashmere", "max_price": 50, "chat_id": 8733608216, "category": "Kids"},
