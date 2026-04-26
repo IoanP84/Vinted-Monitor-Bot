@@ -272,7 +272,7 @@ class VintedAPI:
         elif filters.category == "Kids":
             params['catalog_ids'] = '1194'
             params['size_ids[]'] = '1567'
-            params['status_ids[]'] = '6'
+            params['status_ids[]'] = ['6', '1']
         
         url = f"{self.session_manager.api_base}{self.api_endpoints['search']}"
         query_string = urlencode(params, quote_via=quote)
