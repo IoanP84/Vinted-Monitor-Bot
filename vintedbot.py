@@ -477,11 +477,11 @@ class VintedBot:
             "chat_id": chat_id,
             "country_code": ".pl",
            "searches": [
-    {"query": "kaszmir", "max_price": 50, "chat_id": 8733608216, "category": "Kids"},
-    {"query": "cashmere", "max_price": 50, "chat_id": 8733608216, "category": "Kids"},
-    {"query": "wełna merino", "max_price": 50, "chat_id": 8733608216, "category": "Kids"},
-    {"query": "linen", "max_price": 50, "chat_id": 8733608216, "category": "Kids"},
-    {"query": "len", "max_price": 50, "chat_id": 8733608216, "category": "Kids"}
+    {"query": "kaszmir", "max_price": 100, "chat_id": 8733608216, "category": "Kids"},
+    {"query": "cashmere", "max_price": 100, "chat_id": 8733608216, "category": "Kids"},
+    {"query": "wełna merino", "max_price": 100, "chat_id": 8733608216, "category": "Kids"},
+    {"query": "linen", "max_price": 100, "chat_id": 8733608216, "category": "Kids"},
+    {"query": "len", "max_price": 100, "chat_id": 8733608216, "category": "Kids"}
                        ],
             "check_interval": 60,
             "max_price": None,
