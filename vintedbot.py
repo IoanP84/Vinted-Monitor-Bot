@@ -269,7 +269,7 @@ class VintedAPI:
                 params['catalog_ids'] = '5'
             elif filters.gender == "Women":
                 params['catalog_ids'] = '1'
-            if filters.category == "Kids":
+        elif filters.category == "Kids":
             params['catalog_ids'] = '1194'
             params['size_ids[]'] = '1567'
             params['status_ids[]'] = '6'
