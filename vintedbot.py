@@ -257,12 +257,12 @@ class VintedAPI:
             await asyncio.sleep(random.uniform(5, 10))
             return []
         
-        params = {
-            'page': str(page),
-            'per_page': str(per_page),
-            'order': 'newest_first',
-            'search_text': filters.query
-        }
+        params = [
+    ('page', str(page)),
+    ('per_page', str(per_page)),
+    ('order', 'newest_first'),
+    ('search_text', filters.query)
+                 ]
         
         if filters.category == "Clothing":
             if filters.gender == "Men":
@@ -270,10 +270,10 @@ class VintedAPI:
             elif filters.gender == "Women":
                 params['catalog_ids'] = '1'
         elif filters.category == "Kids":
-            params['catalog_ids'] = '1194'
-            params['size_ids[]'] = '1567'
-            params['status_ids[]'] = '6'
-            params['status_ids%5B%5D'] = '1'
+    params.append(('catalog_ids', '1194'))
+    params.append(('size_ids[]', '1567'))
+    params.append(('status_ids[]', '6'))
+    params.append(('status_ids[]', '1'))
         
         url = f"{self.session_manager.api_base}{self.api_endpoints['search']}"
         query_string = urlencode(params, quote_via=quote)
